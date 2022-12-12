@@ -1,0 +1,603 @@
+label{
+    font-size: x-large;
+}
+
+body{
+    background-color: cadetblue;
+}
+
+/*--------------------------------Container Téléphone------------------------------------------------*/
+
+.phone {
+    display: flex;
+    position: relative;
+    width: 650px;
+    height: 750px;
+    margin: 75px auto 0;
+    transform-style: preserve-3d;
+    flex-direction: column;
+}
+
+/*--------------------------------Screen Gauche------------------------------------*/
+
+.gauche {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+
+}
+
+.screenLeft {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+/*--------------------------------Screen Droite------------------------------------*/
+
+.droite {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+
+}
+
+.screenRight {
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+/*----------------------------Face front et back----------------------------------------*/
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.front {
+    background-color: #3C3E40;
+    transform: rotateX(0deg) translateZ(10px);
+}
+
+.back {
+    background-color: #3C3E40;
+    transform: rotateY(180deg) translateZ(10px);
+}
+
+/*-----------------face droite et gauche------------------------------*/
+
+.rl {
+    position: absolute;
+    width: 20px;
+    height: 100%;
+}
+
+.right {
+    background-color: #3C3E40;
+    transform: rotateY(90deg) translateZ(315px);
+}
+
+.left {
+    background-color: #3C3E40;
+    transform: rotateY(-90deg) translateZ(10px);
+}
+
+
+/*---------------face haut et bas-------------------------------*/
+.tb {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+}
+
+.top {
+    background-color: #3C3E40;
+    transform: rotateX(90deg) translateZ(10px);
+}
+
+.bottom {
+    background-color: #3C3E40;
+    transform: rotateX(-90deg) translateZ(740px);
+}
+
+
+/*----------------------------Check box animations-----------------------------------------*/
+
+.animeRight:checked~.phone>.droite {
+    animation: fermeture_droite 4s;
+    animation-fill-mode: forwards;
+}
+
+.animeRight:not(:checked)~.phone>.droite {
+    animation: ouverture_droite 4s;
+    animation-fill-mode: forwards;
+}
+
+.animeLeft:checked~.phone>.gauche {
+    animation: fermeture_gauche 4s;
+    animation-fill-mode: forwards;
+}
+
+.animeLeft:not(:checked)~.phone>.gauche {
+    animation: ouverture_gauche 4s;
+    animation-fill-mode: forwards;
+}
+
+.animeReverse:checked~.phone{
+    animation: inReverse 4s;
+    animation-fill-mode: forwards;
+}
+
+.animeReverse:not(:checked)~.phone{
+    animation: unReverse 4s;
+    animation-fill-mode: forwards;
+}
+
+.animeSpin:checked~.phone {
+    animation: spin 4s infinite linear;
+}
+
+
+
+/*-------------------------bordure noir--------------------------------------------*/
+
+.border {
+    background-color: black;
+}
+
+.faceTop {
+    height: 1%;
+    width: 100%;
+    position: absolute;
+    transform: translateY(0px);
+}
+
+.faceLeft {
+    height: 100%;
+    width: 2.286%;
+    position: absolute;
+    transform: translateY(0px);
+}
+
+.faceRight {
+    height: 100%;
+    width: 2.286%;
+    position: absolute;
+    transform: translateX(317px);
+}
+
+.faceBottom {
+    height: 1%;
+    width: 100%;
+    position: absolute;
+    transform: translateY(742px);
+}
+
+/*----------------------------fond d'écran-----------------------------------------*/
+
+.taille {
+    width: 100%;
+    height: 100%;
+}
+
+.leftWallpaper {
+    background: url(picture/fond-ecran-gauche.png);
+    background-size: 100% 100%;
+
+}
+
+.rightWallpaper {
+    background: url(picture/fond-ecran-droite.png);
+    background-size: 100% 100%;
+}
+
+/*------------------------Icon front gauche---------------------------------------------*/
+
+.Icon {
+    width: 15.389%;
+    height: 6.667%;
+    position: absolute;
+    transition: all .1s ease-in-out;
+}
+
+
+
+.photo {
+    background: url(picture/icon-photo.png);
+    background-size: 100% 100%;
+    transform: translateX(50px) translateY(525px);
+}
+
+.parametre {
+    background: url(picture/icon-settings.png);
+    background-size: 100% 100%;
+    transform: translateX(50px) translateY(625px);
+}
+
+.youtube {
+    background: url(picture/icon-youtube.png);
+    background-size: 100% 100%;
+    transform: translateX(150px) translateY(525px);
+}
+
+.spotify {
+    background: url(picture/icon-spotify.png);
+    background-size: 100% 100%;
+    transform: translateX(150px) translateY(625px);
+}
+
+.galeriephoto {
+    background: url(picture/icon-galeriephoto.png);
+    background-size: 100% 100%;
+    transform: translateX(250px) translateY(525px);
+}
+
+.message {
+    background: url(picture/icon-message.png);
+    background-size: 100% 100%;
+    transform: translateX(250px) translateY(625px);
+}
+
+/*-------------------------Icon front droite--------------------------------------------*/
+
+.appel{
+    background: url(picture/icon-appel.png);
+    background-size: 100% 100%; 
+    transform: translateX(50px) translateY(525px);
+  }
+  
+  .google{
+    background: url(picture/icon-google.png);
+    background-size: 100% 100%; 
+    transform: translateX(50px) translateY(625px);
+  }
+  
+  .snapchat{
+    background: url(picture/icon-snapchat.png);
+    background-size: 100% 100%; 
+    transform: translateX(150px) translateY(525px);
+  }
+  
+  .instagram{
+    background: url(picture/icon-instagram.png);
+    background-size: 100% 100%; 
+    transform: translateX(150px) translateY(625px); 
+  }
+  
+  .telegram{
+    background: url(picture/icon-telegram.png);
+    background-size: 100% 100%; 
+    transform: translateX(250px) translateY(525px); 
+  }
+  
+  .playstore{
+    background: url(picture/icon-playstore.png);
+    background-size: 100% 100%; 
+    transform: translateX(250px) translateY(625px);
+  }
+
+/*---------------------------Icon back gauche------------------------------------------*/
+
+.twitch{
+    background: url(picture/icon-twitch.png);
+    background-size: 100% 100%; 
+    transform: translateX(40px) translateY(525px);
+  }
+  
+  .pinterest{
+    background: url(picture/icon-pinterest.png);
+    background-size: 100% 100%; 
+    transform: translateX(40px) translateY(625px);
+  }
+  
+  .twitter{
+    background: url(picture/icon-twitter.png);
+    background-size: 100% 100%; 
+    transform: translateX(140px) translateY(525px);
+  }
+  
+  .facebook{
+    background: url(picture/icon-facebook.png);
+    background-size: 100% 100%; 
+    transform: translateX(140px) translateY(625px); 
+  }
+  
+  ._photo{
+    background: url(picture/icon-photo.png);
+    background-size: 100% 100%; 
+    transform: translateX(240px) translateY(525px); 
+  }
+  
+  ._galeriephoto{
+    background: url(picture/icon-galeriephoto.png);
+    background-size: 100% 100%; 
+    transform: translateX(240px) translateY(625px);
+  }
+
+/*------------------------Capteur Photo---------------------------------------------*/
+
+.faceCapteur{
+    height: 3%;
+    width: 7%;
+    position: absolute;
+    background: url(picture/faceCapteur.png);
+    background-size: 100% 100%;
+    transform: translateY(16px) translateX(150px);
+    z-index: 2;
+}
+
+.capteurPhoto{
+    height: 30%;
+    width: 21%;
+    position: absolute;
+    background: url(picture/capteur-photo.png);
+    background-size: 100% 100%;
+    transform: translateY(15px) translateX(25px);
+}
+/*----------------------------Horloge numérique back-----------------------------------------*/
+
+.horloge{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #3C3E40;
+    text-shadow: 0 2px 50px rgba(10,10,10,0.5);
+}
+
+.heures{
+    position: absolute;
+    width: 70%;
+    height: 9%;
+    font-size: 60px;
+    font-weight: 50;
+    padding-bottom: 5px;
+    transform: translateY(-150px) translateX(5px);
+}
+
+/*---------------------Icon ------------------------------------------------*/
+
+.Icon:hover {
+    width: 60px;
+    height: 60px;
+}
+
+/*---------------------Barre de menu du haut et du bas------------------------------------------------*/
+
+.navigation-bar{
+    width: 100%;
+    height: 4%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 50%);
+    transform: translateY(712.5px);
+}
+
+.home{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url(picture/menu-bar.png);
+    background-size: 83% 100%;
+    transform: translateX(38.5px);
+}
+
+.notif-bar{
+    width: 100%;
+    height: 4%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 50%);
+    transform: translateY(6px);
+}
+
+.info-bar{
+    width: 75%;
+    height: 100%;
+    background: url(picture/notif-bar.png);
+    background-size: 100% 80%;
+    margin-top: 3px;
+    margin-left: 10px;    
+}
+
+/*--------------------Widget gif front gauche-------------------------------------------------*/
+
+.widget-gif{
+    width: 85%;
+    height: 50%;
+    background: url(picture/android-gif.gif);
+    background-size: 100% 100%;
+    border-radius: 20px;
+    border: 5px solid;
+    border-color: white;
+    position: absolute;
+    transform: translateY(60px) translateX(35px);
+}
+
+/*-----------------------Horloge front droite----------------------------------------------*/
+
+.clock {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #868686;
+    border-radius: 50%;
+    border: 5px solid rgb(70, 70, 70);
+    box-shadow: inset 2px 3px 8px 0 rgba(255, 255, 255, 0.1);
+    transform: translateY(100px) translateX(55px);
+}
+
+.wrap {
+    position: relative;
+    width: 100;
+    height: 100%;
+}
+
+.minute, .heure {
+    position: absolute;
+    height: 50px; 
+    width: 5px;
+    margin: auto;
+    top: -24%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform-origin: bottom center;
+    transform: rotate(0deg);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+    background: black;
+}
+
+.minute {
+    position: absolute;
+    height: 70px;
+    width: 3px;
+    top: -36%;
+    left: 0;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+    transform: rotate(90deg);
+}
+
+.seconde {
+    position: absolute;
+    height: 80px;
+    width: 2px;
+    margin: auto;
+    top: -45%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 4px;
+    background: #ff4b3e;
+    transform-origin: bottom center;
+    transform: rotate(180deg);
+}
+
+.dot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgb(31, 31, 31);
+    border: 2px solid #1b1b1b;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.skin{
+    height: 95%;
+    width: 95%;
+    position: absolute;
+    background: url(picture/horloge.png);
+    background-size: 100% 100%;
+    transform: translateX(5px) translateY(5px);
+}
+/*-----------------------Animations----------------------------------------------*/
+
+@keyframes spin {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes fermeture_gauche {
+    from {
+        transform: rotateY(0deg);
+        z-index: 0;
+    }
+
+    to {
+        transform: rotateY(180deg) translateZ(-20px);
+        z-index: 10;
+    }
+
+}
+
+@keyframes ouverture_gauche {
+    from {
+        transform: rotateY(180deg);
+        z-index: 10;
+    }
+
+    to {
+        transform: rotateY(0deg);
+        z-index: 0;
+    }
+
+}
+
+@keyframes fermeture_droite {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+        z-index: 0;
+    }
+
+    to {
+        transform: rotateY(-180deg)translateZ(-20px);
+        z-index: 10;
+    }
+
+}
+
+@keyframes ouverture_droite {
+    from {
+        transform: rotateY(-180deg);
+        z-index: 10;
+    }
+
+    to {
+        transform: rotateY(0deg);
+        z-index: 0;
+    }
+}
+
+
+@keyframes inReverse {
+    from {
+        transform: rotateY(0deg);
+        }
+
+    to {
+        transform: rotateY(-180deg);
+    }
+
+}
+
+@keyframes unReverse {
+    from {
+        transform: rotateY(180deg);
+    }
+
+    to {
+        transform: rotateY(0deg);
+    }
+}
+
+
+
+/*-------------------Responsive----------------------------------------------*/
+
+@media screen and (max-width:700px){
+
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+}
